@@ -46,12 +46,17 @@ os.environ["GOOGLE_API_KEY"] = os.getenv("GOOGLE_API_KEY")
 
 
 
-# Initialize text-to-speech engine
-tts_engine = pyttsx3.init()
-tts_engine.setProperty('rate', 150)  # Adjust speaking rate
-tts_engine.setProperty('volume', 0.9)  # Adjust volume
-tts_engine.setProperty('voice', 'english-us')  # Set voice to US English
-tts_engine.setProperty('pitch', 50)  # Adjust pitch
+# Updated text-to-speech function
+def text_to_speech(text, lang='en'):
+    """Convert text to speech and return the audio file path"""
+    try:
+        with tempfile.NamedTemporaryFile(delete=False, suffix='.mp3') as fp:
+            tts = gTTS(text=text, lang=lang)
+            tts.save(fp.name)
+            return fp.name
+    except Exception as e:
+        st.error(f"Error generating speech: {str(e)}")
+        return None
 
 # Initialize database
 def init_db():
