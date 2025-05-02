@@ -1,0 +1,361 @@
+:root {
+    --primary: #005b96;       /* Deep blue - trust, professionalism */
+    --secondary: #0d6e6e;     /* Teal - healing, clarity */
+    --accent: #4a90e2;        /* Light blue - communication */
+    --background: #f5f9ff;    /* Very light blue - clean background */
+    --text: #000000;          /* High contrast black - readability */
+    --light-text: #2d3436;    /* Dark gray - secondary text */
+    --card: #ffffff;          /* White - cards and containers */
+    --emergency: #d63031;     /* Red - emergency alerts */
+    --success: #00b894;       /* Green - success messages */
+    --warning: #fdcb6e;       /* Yellow - warnings */
+    --neutral: #dfe6e9;       /* Light gray - neutral elements */
+}
+
+.stApp {
+    background-image: url("https://static.vecteezy.com/system/resources/thumbnails/004/449/782/small_2x/abstract-geometric-medical-cross-shape-medicine-and-science-concept-background-medicine-medical-health-cross-healthcare-decoration-for-flyers-poster-web-banner-and-card-illustration-vector.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: var(--background);
+    color: var(--text);
+}
+
+/* Add semi-transparent overlay to improve readability */
+.main {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 2rem;
+}
+
+/* Make sure cards have solid background */
+.card {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+body, p, h1, h2, h3, h4, h5, h6, div, span {
+    color: var(--text) !important;
+}
+
+.main-header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    color: white;
+}
+
+.main-header {
+    font-size: 2.5rem;
+    color: white;
+    text-align: center;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0;
+}
+
+.hospital-logo {
+    width: 60px;
+    height: 60px;
+    filter: brightness(0) invert(1);
+}
+
+.sub-header {
+    font-size: 1.25rem;
+    color: var(--light-text);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: 400;
+}
+
+.disclaimer {
+    background-color: var(--card);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.85rem;
+    color: var(--text);
+    border-left: 4px solid var(--emergency);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.stButton>button {
+    background-color: var(--primary);
+    color: white !important;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.stButton>button:hover {
+    background-color: var(--secondary);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.emergency {
+    color: var(--emergency) !important;
+    font-weight: 600;
+    padding: 1rem;
+    border: 1px solid var(--emergency);
+    border-radius: 0.5rem;
+    margin: 1rem 0;
+    background-color: rgba(214, 48, 49, 0.1);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.8; }
+    100% { opacity: 1; }
+}
+
+.chat-user {
+    background-color: #e3f2fd;
+    padding: 0.75rem 1rem;
+    border-radius: 1rem 1rem 0 1rem;
+    margin: 0.5rem 0;
+    max-width: 80%;
+    margin-left: auto;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    border: 1px solid #bbdefb;
+    color: var(--text) !important;
+}
+
+.chat-assistant {
+    background-color: var(--accent);
+    color: var(--text) !important;
+    padding: 0.75rem 1rem;
+    border-radius: 1rem 1rem 1rem 0;
+    margin: 0.5rem 0;
+    max-width: 80%;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.mini-chat {
+    background-color: #e8f5e9;
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+    margin: 0.5rem 0;
+    border: 1px solid #c8e6c9;
+    color: var(--text) !important;
+}
+
+.stTabs [data-baseweb="tab-list"] {
+    gap: 0.5rem;
+}
+
+.stTabs [data-baseweb="tab"] {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.2s;
+    font-weight: 500;
+    color: var(--text) !important;
+    background-color: var(--neutral);
+}
+
+.stTabs [aria-selected="true"] {
+    background-color: var(--primary);
+    color: white !important;
+}
+
+.stRadio [role="radiogroup"] {
+    gap: 1rem;
+}
+
+.stRadio [role="radio"] {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--neutral);
+    transition: all 0.2s;
+    color: var(--text) !important;
+}
+
+.stRadio [role="radio"][aria-checked="true"] {
+    background-color: var(--primary);
+    color: white !important;
+    border-color: var(--primary);
+}
+
+.card {
+    background-color: var(--card);
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    margin-bottom: 1.5rem;
+    color: var(--text) !important;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+.card-title {
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.25rem;
+}
+
+.success-banner {
+    background-color: rgba(0, 184, 148, 0.1);
+    color: var(--success);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    border-left: 4px solid var(--success);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.feature-icon {
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+    color: var(--primary);
+}
+
+.stFileUploader [data-testid="stFileUploader"] {
+    border: 2px dashed var(--neutral);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    color: var(--text) !important;
+    background-color: var(--card);
+}
+
+.stFileUploader [data-testid="stFileUploader"]:hover {
+    border-color: var(--primary);
+}
+
+.stExpander .stMarkdown {
+    color: var(--text) !important;
+}
+
+.user-guide-section {
+    background-color: var(--card);
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.user-guide-title {
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.user-guide-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.step-number {
+    background-color: var(--primary);
+    color: white;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.step-content {
+    flex-grow: 1;
+}
+
+.step-title {
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.step-description {
+    color: var(--light-text);
+    margin-bottom: 0.5rem;
+}
+
+.step-image {
+    max-width: 100%;
+    border-radius: 0.5rem;
+    margin-top: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Voice assistant button styling */
+.voice-assistant-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.voice-assistant-btn:hover {
+    background-color: var(--secondary);
+    transform: translateY(-1px);
+}
+
+.voice-assistant-btn.listening {
+    animation: pulse 1.5s infinite;
+    background-color: var(--emergency);
+}
+
+/* Audio container styling */
+.audio-container {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: rgba(126, 87, 194, 0.1);
+    border: 1px solid rgba(126, 87, 194, 0.2);
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.audio-container audio {
+    width: 100%;
+    max-width: 300px;
+    outline: none;
+    border-radius: 0.25rem;
+}
+
+.audio-container .audio-label {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--primary);
+}
+
+/* Add hover effect for audio container */
+.audio-container:hover {
+    background-color: rgba(126, 87, 194, 0.15);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
